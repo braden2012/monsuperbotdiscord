@@ -37,7 +37,9 @@ async def load_extensions():
 async def main():
     async with bot:
         await load_extensions()
-        await bot.start("TON_TOKEN_SECRET_ICI")
+        # On va chercher le TOKEN caché de manière sécurisée dans Railway
+        import os
+        await bot.start(os.getenv("TOKEN"))
 
 # Exécution du script
 if __name__ == "__main__":
