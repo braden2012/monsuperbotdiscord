@@ -324,7 +324,7 @@ def has_required_role():
 # --- +add ---
 @bot.command(name="add")
 @has_required_role()
-async def add_to_ticket(ctx, member_or_role: discord.abc.SnowflakePermissionsOverwriteTarget):
+async def add_to_ticket(ctx, member_or_role: discord.Member | discord.Role):
     if "ticket-" not in ctx.channel.name:
         return await ctx.send("❌ Cette commande ne peut être exécutée que dans un ticket.")
     await ctx.channel.set_permissions(member_or_role, read_messages=True, send_messages=True)
