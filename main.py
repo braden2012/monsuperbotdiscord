@@ -443,7 +443,7 @@ async def create_emoji(ctx, url: str, name: str):
 # --- +del ---
 @bot.command(name="del")
 @has_required_role()
-async def remove_from_ticket(ctx, member_or_role: discord.abc.SnowflakePermissionsOverwriteTarget):
+async def remove_from_ticket(ctx, member_or_role: discord.Member | discord.Role):
     if "ticket-" not in ctx.channel.name:
         return await ctx.send("❌ Cette commande ne peut être exécutée que dans un ticket.")
     await ctx.channel.set_permissions(member_or_role, overwrite=None)
