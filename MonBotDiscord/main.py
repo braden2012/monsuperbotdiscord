@@ -2,6 +2,14 @@ import asyncio
 import discord
 from discord.ext import commands
 import os
+import os
+import psycopg2
+
+# Railway donne automatiquement cette variable à ton bot
+DATABASE_URL = os.getenv('DATABASE_URL')
+
+# Pour te connecter à ta base de données dans tes fonctions, tu feras :
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # 1. Configuration des intentions (Intents)
 intents = discord.Intents.default()
