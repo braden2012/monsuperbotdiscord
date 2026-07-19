@@ -1303,7 +1303,6 @@ async def list_servers(ctx):
 # 5. Lancement du programme
 async def main():
     async with bot:
-        await load_extensions()
         import os
         await bot.start(os.getenv("TOKEN"))
 
