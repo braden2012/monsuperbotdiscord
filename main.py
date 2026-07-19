@@ -14,6 +14,7 @@ intents.members = True
 
 # 2. Initialisation du bot
 bot = commands.Bot(command_prefix="!", intents=intents)
+bot.remove_command('help') # Désactive la commande d'aide par défaut
 
 # 3. Événement de démarrage
 @bot.event
