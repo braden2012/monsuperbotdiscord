@@ -1298,13 +1298,11 @@ async def leave_guild(ctx):
 @has_required_role()
 async def list_servers(ctx):
     guilds = "\n".join([f"• {g.name} ({g.id}) | {g.member_count} membres" for g in bot.guilds])
-    embed = discord.Embed(title=f"... (1 Ko restants)
-
+    
 # 5. Lancement du programme
 async def main():
     async with bot:
         await load_extensions()
-        # On va chercher le TOKEN caché de manière sécurisée dans Railway
         import os
         await bot.start(os.getenv("TOKEN"))
 
