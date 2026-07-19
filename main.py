@@ -799,7 +799,7 @@ for cmd_name in antiraid_commands:
 # --- +bypass ---
 @bot.command(name="bypass")
 @has_required_role()
-async def bypass(ctx, action: str, member_or_role: discord.abc.SnowflakePermissionsOverwriteTarget):
+async def bypass(ctx, action: str, member_or_role: discord.Member | discord.Role):
     await ctx.send(f"✅ {member_or_role.name} a été ajouté(e) au bypass de l'antiraid.")
 
 # --- +createlimit ---
@@ -959,12 +959,12 @@ async def custom_commands(ctx):
 # --- +setperm / +delperm ---
 @bot.command(name="setperm")
 @has_required_role()
-async def set_perm(ctx, target: discord.abc.SnowflakePermissionsOverwriteTarget, level: str):
+async def set_perm(ctx, target: discord.Member | discord.Role, level: str):
     await ctx.send(f"✅ {target.mention} a été configuré(e) avec le niveau de permission : `{level}`.")
 
 @bot.command(name="delperm")
 @has_required_role()
-async def del_perm(ctx, target: discord.abc.SnowflakePermissionsOverwriteTarget, level: str):
+async def del_perm(ctx, target: discord.Member | discord.Role, level: str):
     await ctx.send(f"➖ {target.mention} a été retiré(e) du niveau de permission : `{level}`.")
 
 # --- +hide / +unhide / +hideall / +unhideall ---
