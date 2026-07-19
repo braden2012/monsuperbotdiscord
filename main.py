@@ -160,9 +160,9 @@ async def fivem(ctx, ip: str = None):
         return await ctx.send("ℹ️ Utilisation : `+fivem <IP:PORT>` (Ex: `+fivem 127.0.0.1:30120`)")
     await ctx.send(f"🔍 Recherche des informations pour le serveur FiveM : `{ip}`... (Configuration enregistrée)")
 
-@bot.command(name="help")
+@bot.command(name="aide")
 @has_required_role()
-async def help_cmd(ctx):
+async def aide(ctx):
     embed = discord.Embed(title="📚 Liste des commandes Public", color=discord.Color.blue())
     embed.description = "`+afk`, `+banner`, `+calc`, `+editsnipe`, `+emojis`, `+fivem`, `+help`, `+helpall`, `+invite`, `+join-stats`, `+pic`, `+ping`, `+reminder`, `+role-graph`, `+role-info`, `+roleinfo`, `+serverinfo`, `+snipe`, `+support`, `+translate`, `+user`, `+whois`"
     await ctx.send(embed=embed)
